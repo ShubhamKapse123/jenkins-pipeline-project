@@ -11,21 +11,21 @@ pipeline{
   stages{
     // we define the steps under the stage
     stage("compile"){
-      when{
-        expression{
-
-        }
-      }
+      // when{
+      //   expression{
+      //       // we can add variable here
+      //   }
+      // }
       // define the steps
       steps{
         bat 'javac Test.java'
-        bat 'echo ${VERSION_APP} '
       }
     }
 
     stage("run"){
       steps{
         bat "java Test"
+         bat 'echo "VERSION_APP: ${env.VERSION_APP}"'
       }
     }
   }
