@@ -25,7 +25,7 @@ pipeline{
     stage("run"){
       steps{
         bat "java Test"
-        bat 'echo "%VERSION_APP%'
+        bat 'echo %VERSION_APP%'
       }
     }
   }
